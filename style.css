@@ -1,0 +1,48 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefae0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#quoteBox {
+  margin: 20px 0;
+}
+
+#quote {
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+}
+
+#author {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+button {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d3557;
+}

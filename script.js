@@ -58,5 +58,22 @@ function getRandomQuote() {
 
 document.getElementById("newQuote").addEventListener("click", getRandomQuote);
 
-// Show one on load
+document.getElementById("copyQuote").addEventListener("click", () => {
+  const quote = document.getElementById("quote").innerText;
+  navigator.clipboard.writeText(quote).then(() => {
+    alert("Quote copied to clipboard!");
+  });
+});
+
+document.getElementById("whatsappQuote").addEventListener("click", () => {
+  const quote = document.getElementById("quote").innerText;
+  const message = encodeURIComponent(quote);
+  const url = `https://api.whatsapp.com/send?text=${message}`;
+  window.open(url, "_blank");
+});
+document.getElementById("darkToggle").addEventListener("change", (e) => {
+  document.body.classList.toggle("dark", e.target.checked);
+});
+
+// Show one on page load
 window.addEventListener("load", getRandomQuote);

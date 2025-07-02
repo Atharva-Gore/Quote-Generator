@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Random Quote Generator</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>📜 Random Quote</h1>
+
     <p id="quote">Loading...</p>
-    <button id="newQuote">New Quote</button>
+
+    <div class="buttons">
+      <button id="newQuote">New Quote</button>
+      <button id="copyQuote">Copy 📋</button>
+      <button id="whatsappQuote">Share on WhatsApp</button>
+    </div>
+
+    <label class="switch">
+      <input type="checkbox" id="darkToggle" />
+      <span class="slider"></span>
+    </label>
+    <p class="mode-label">Dark Mode</p>
   </div>
 
   <script src="script.js"></script>

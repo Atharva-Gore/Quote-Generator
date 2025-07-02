@@ -1,42 +1,120 @@
+:root {
+  --bg: #fffbe6;
+  --text: #222;
+  --card: white;
+  --button-bg: #4a90e2;
+  --button-text: white;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --card: #1e1e1e;
+  --button-bg: #00bcd4;
+  --button-text: black;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fffbe6;
+  background-color: var(--bg);
+  color: var(--text);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  transition: 0.3s ease;
 }
 
 .container {
-  background-color: white;
-  padding: 40px;
+  background-color: var(--card);
+  padding: 2rem 3rem;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
+  width: 90%;
+  max-width: 500px;
+  transition: 0.3s ease;
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 #quote {
   font-style: italic;
-  color: #444;
-  margin-bottom: 30px;
+  font-size: 1.3rem;
+  margin: 1.2rem 0;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1.1em;
-  background-color: #3b82f6;
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #2563eb;
+  opacity: 0.9;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-top: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.mode-label {
+  font-size: 0.9rem;
+  margin-top: 8px;
 }

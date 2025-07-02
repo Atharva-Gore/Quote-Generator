@@ -1,20 +1,10 @@
-function getQuote() {
-  const quoteText = document.getElementById("quote");
-  const authorText = document.getElementById("author");
-
-  fetch("https://api.quotable.io/random")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to fetch quote");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      quoteText.innerText = `"${data.content}"`;
-      authorText.innerText = `— ${data.author}`;
-    })
-    .catch((error) => {
-      quoteText.innerText = "Oops! Could not fetch a quote.";
-      authorText.innerText = "";
-    });
+async function fetchQuote() {
+  try {
+    const response = await fetch("https://zenquotes.io/api/random");
+    const data = await response.json();
+    document.getElementById("quote").innerText = `"${data[0].q}" — ${data[0].a}`;
+  } catch (error) {
+    document.getElementById("quote").innerText = "Oops! Could not fetch a quote.";
+    console.error(error);
+  }
 }
